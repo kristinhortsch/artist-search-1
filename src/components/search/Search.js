@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { getArtists } from '../../services/artistsAndWorks';
 import Artist from '../artist/Artist';
 
@@ -30,13 +31,13 @@ export default class Search extends PureComponent {
 
   handleClick = () => {
     const { artist } = this.state;
-    console.log('thisssss', artist.id);
+    console.log('thisssss', artist);
   }
 
   render() {
     const { artist } = this.state;
     const listOfArtists = this.state.artists.map(artist => {
-      return <button onClick={this.handleClick} key={artist.id}><li><Artist artist={artist}/></li></button> ;
+      return <Link to='/artist/{artist.id}' key={artist.id}><li><Artist artist={artist}/></li></Link> ;
     });
     return (
       <Fragment>
