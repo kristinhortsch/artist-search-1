@@ -1,6 +1,9 @@
 const getArtists = (artist) => {
-  return fetch(`https://musicbrainz.org/ws/2/artist?query=${artist}&fmt=json&limit=25`, {
+  return fetch(`https://musicbrainz.org/ws/2/artist?query=${artist}&fmt=json&limit=2`, {
     method: 'GET',
+    header: {
+      origin: null
+    }
   })
     .then(response => response.json())
     .then(res => {
