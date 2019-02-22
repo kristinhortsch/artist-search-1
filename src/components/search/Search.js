@@ -46,12 +46,11 @@ class Search extends PureComponent {
   }
 
   render() {
+    const totalPages = Math.ceil(this.state.count / 10);
     const { artist } = this.state;
     const listOfArtists = this.state.artists.map(artist => {
       return <Link to={`/artist/${artist.name}/${artist.id}`} key={artist.id}><li><Artist artist={artist}/></li></Link> ;
     });
-
-    const totalPages = Math.ceil(this.state.count / 10);
     
     return (
       <Fragment>
