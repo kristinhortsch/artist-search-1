@@ -14,8 +14,8 @@ export default function App() {
     <Fragment>
       <Router>
         <Switch>
-          <Route exact path='/artist/:id' component={Artist}/>
-          <Route exact path='/song/:id' component={Song}/>
+          {/* <Route exact path='/artist/:id' component={Artist}/>
+          <Route exact path='/song/:id' component={Song}/> */}
           <Route exact path='/' component={Search}/>
         </Switch>
       </Router>
