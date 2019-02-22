@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link
+  // Link
 } from 'react-router-dom';
-import Artist from './artist/Artist';
-import Song from './songs/Song';
+// import Artist from './artist/Artist';
+// import Song from './songs/Song';
 import Search from './search/Search';
 
 export default function App() {

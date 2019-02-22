@@ -7,6 +7,7 @@ const getArtists = (artist) => {
   })
     .then(response => response.json())
     .then(res => {
+      // eslint-disable-next-line no-console
       console.log('res', res);
       return {
         results: res.artists
