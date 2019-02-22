@@ -22,11 +22,10 @@ const getArtistWorks = (id) => {
   })
     .then(response => response.json())
     .then(res => {
-      // eslint-disable-next-line no-console
-      console.log(res.works);
       return {
-        works: res.works
+        results: res.works
       };
     });
 };
+
 export { getArtists, getArtistWorks };
