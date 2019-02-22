@@ -25,4 +25,3 @@ Search for artists by name.
 * Router 6 points
 * Tests 2 points
 * syntax/Clean code 2 points
-
