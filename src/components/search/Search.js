@@ -10,18 +10,13 @@ export default class Search extends PureComponent {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevState.artist, this.state.artist, prevState.artist !== this.state.artist);
     if(prevState.artist !== this.state.artist) {
       const { artist } = this.state;
       getArtists(artist)
         .then(response => {
-          console.log(response);
           this.setState({ artists: response.results });
         });
- 
     }
-
-
   }
 
   handleSubmit = ({ target }) => {
@@ -29,15 +24,10 @@ export default class Search extends PureComponent {
     this.setState({ [target.name]: target.value });
   }
 
-  handleClick = () => {
-    const { artist } = this.state;
-    console.log('thisssss', artist);
-  }
-
   render() {
     const { artist } = this.state;
     const listOfArtists = this.state.artists.map(artist => {
-      return <Link to='/artist/{artist.id}' key={artist.id}><li><Artist artist={artist}/></li></Link> ;
+      return <Link to={`/artist/${artist.id}`} key={artist.id}><li><Artist artist={artist}/></li></Link> ;
     });
     return (
       <Fragment>
