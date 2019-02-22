@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getArtistWorks } from '../../services/artistsAndWorks';
 import Song from './Song';
 
@@ -16,7 +16,6 @@ export default class Songs extends PureComponent {
   componentDidMount() {
     getArtistWorks(this.props.match.params.id)
       .then(response => {
-        console.log(response.results);
         this.setState({ songs: response.results });
       });
   }
@@ -24,7 +23,8 @@ export default class Songs extends PureComponent {
   render() {
     const { songs } = this.state;
     const listOfSongs = songs.map(song => {
-      return <li key={song.id}><Song song={song}/></li>;
+      console.log(song);
+      return <Link to={`/songs/${this.props.match.params.name}/${song.title}`} key={song.id}><li><Song song={song}/></li></Link>;
     });
     return (
       <Fragment>

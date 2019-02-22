@@ -27,7 +27,8 @@ export default class Search extends PureComponent {
   render() {
     const { artist } = this.state;
     const listOfArtists = this.state.artists.map(artist => {
-      return <Link to={`/artist/${artist.id}`} key={artist.id}><li><Artist artist={artist}/></li></Link> ;
+      console.log(artist);
+      return <Link to={`/artist/${artist.name}/${artist.id}`} key={artist.id}><li><Artist artist={artist}/></li></Link> ;
     });
     return (
       <Fragment>

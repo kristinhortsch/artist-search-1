@@ -1,5 +1,5 @@
 const getArtists = (artist) => {
-  return fetch(`https://musicbrainz.org/ws/2/artist?query=${artist}&fmt=json&limit=2`, {
+  return fetch(`https://musicbrainz.org/ws/2/artist?query=${artist}&fmt=json&limit=25`, {
     method: 'GET',
     header: {
       origin: null
@@ -28,4 +28,18 @@ const getArtistWorks = (id) => {
     });
 };
 
-export { getArtists, getArtistWorks };
+const getSongLyrics = (artist, song) => {
+  return fetch(`https://api.lyrics.ovh/v1/${artist}/${song}`, {
+    method: 'GET',
+    header: {
+      origin: null
+    }
+  })
+    .then(response => response.json())
+    .then(res => {
+      return {
+        results: res.lyrics
+      };
+    });
+};
+export { getArtists, getArtistWorks, getSongLyrics };
