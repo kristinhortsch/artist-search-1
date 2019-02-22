@@ -10,23 +10,23 @@ export default class Search extends PureComponent {
   componentDidUpdate() {
     const { artist } = this.state;
     getArtists(artist)
-    .then(response => {
-      this.setState({ artists: response.results });
-    })
+      .then(response => {
+        this.setState({ artists: response.results });
+      });
   }
 
   handleSubmit = ({ target }) => {
-    this.setState({ [target.name]: target.value })
+    this.setState({ [target.name]: target.value });
   }
 
   render() {
     const { artist } = this.state;
     return (
       <Fragment>
-      <h1>Search</h1>
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" name="artist" value={artist} onChange={this.handleSubmit}></input>
-      </form>
+        <h1>Search</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" name="artist" value={artist} onChange={this.handleSubmit}></input>
+        </form>
       </Fragment>
     );
   }
