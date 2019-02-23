@@ -11,7 +11,8 @@ class Search extends PureComponent {
     artist: '',
     offset: 0,
     page: 1,
-    count: null
+    count: null,
+    paging: null
   }
 
   increment = () => {
@@ -29,6 +30,7 @@ class Search extends PureComponent {
       .then(response => {
         this.setState({ count: response.count });
         this.setState({ artists: response.results });
+        this.setState({ paging: true });
       });
   };
   componentDidUpdate(prevProps, prevState) {
@@ -65,7 +67,7 @@ class Search extends PureComponent {
         <div>
           <div className={styles.paging}>
             <button onClick={this.decrement}>Back</button>
-            {this.state.artist && <p>{this.state.page} / {totalPages}</p>}
+            {this.state.paging && <p>{this.state.page} / {totalPages}</p>}
             <button onClick={this.increment}>Forward</button>
           </div>
           <h3>Artists</h3>
