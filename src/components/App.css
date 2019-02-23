@@ -1,0 +1,32 @@
+.header {
+  background-color: black;
+  color: white;
+  margin-top: 0;
+  padding: 2%;
+  text-align: center;
+}
+h1 {
+  margin: 0;
+}
+button {
+  margin-left: 1%;
+}
+.paging {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2%;
+}
+h3 {
+  text-align: center;
+}
+li {
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  color:red;
+}
