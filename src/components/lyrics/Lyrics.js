@@ -7,7 +7,7 @@ export default class Lyrics extends PureComponent {
     lyrics: []
   }
   static propTypes = {
-    match: PropTypes.object.isRequired
+    match: PropTypes.object
   }
   componentDidMount() {
     getSongLyrics(this.props.match.params.artist, this.props.match.params.song)

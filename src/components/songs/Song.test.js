@@ -1,16 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Artist from './Artist';
+import Song from './Song';
 
-describe('Artist', () => {
+describe('Song', () => {
   it('matches a snapshot', () => {
-    const artist = {
-      name: 'em',
-      country: 'us',
+    const song = {
+      title: 'em',
+      language: 'us',
       disambiguation: 'rap'
     };
     const tree = renderer.create(
-      <Artist artist={artist} />
+      <Song song={song} />
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
