@@ -1,5 +1,5 @@
-const getArtists = (artist) => {
-  return fetch(`https://musicbrainz.org/ws/2/artist?query=${artist}&fmt=json&limit=25`, {
+const getArtists = (artist, offset) => {
+  return fetch(`https://musicbrainz.org/ws/2/artist?query=${artist}&fmt=json&limit=10&offset=${offset}`, {
     method: 'GET',
     header: {
       origin: null
@@ -7,7 +7,9 @@ const getArtists = (artist) => {
   })
     .then(response => response.json())
     .then(res => {
+      console.log(res.count, 'COUNATA');
       return {
+        count: res.count,
         results: res.artists
       };
     });
