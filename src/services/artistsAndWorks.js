@@ -7,7 +7,6 @@ const getArtists = (artist, offset) => {
   })
     .then(response => response.json())
     .then(res => {
-      console.log(res.count, 'COUNATA');
       return {
         count: res.count,
         results: res.artists
@@ -16,6 +15,7 @@ const getArtists = (artist, offset) => {
 };
 
 const getArtistWorks = (id) => {
+  console.log('clicked');
   return fetch(`https://musicbrainz.org/ws/2/artist/${id}?fmt=json&inc=works`, {
     method: 'GET',
     header: {

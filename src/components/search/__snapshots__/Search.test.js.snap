@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search matches a snapshot 1`] = `
+Array [
+  <div
+    className="header"
+  >
+    <h1>
+      Search
+    </h1>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        name="artist"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <button
+        onClick={[Function]}
+      >
+        Search
+      </button>
+    </form>
+  </div>,
+  <div>
+    <div
+      className="paging"
+    >
+      <button
+        onClick={[Function]}
+      >
+        Back
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Forward
+      </button>
+    </div>
+    <h3>
+      Artists
+    </h3>
+    <ul />
+  </div>,
+]
+`;

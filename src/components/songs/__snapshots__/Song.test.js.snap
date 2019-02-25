@@ -1,15 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Song matches a snapshot 1`] = `
-Array [
-  <h2>
-    em
-  </h2>,
-  <p>
-    rap
-  </p>,
-  <p>
-    us
-  </p>,
-]
+<h2>
+  em
+</h2>
 `;
