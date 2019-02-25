@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 function Artist({ artist }) {
-  const { name, country, disambiguation } = artist;
+  const { name, disambiguation } = artist;
   return (
-    <>
+    <Fragment>
       <h2>{name}</h2>
-      <p>{country}</p>
-      <p>{disambiguation}</p>
-    </>
+      {disambiguation && <p>Description: {disambiguation}</p>}
+    </Fragment>
   );
 }
 
