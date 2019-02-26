@@ -17,7 +17,7 @@ const getArtists = () => {
     results: artistResults
   });
 };
-const getLyrics = () => {
+const getSongLyrics = () => {
   return Promise.resolve({
     results: lyrics
   });
@@ -31,5 +31,5 @@ const getArtistWorks = () => {
 };
 
 
-export { getArtists, getArtistWorks, getLyrics };
+export { getArtists, getArtistWorks, getSongLyrics };
 
