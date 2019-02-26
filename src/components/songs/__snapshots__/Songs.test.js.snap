@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Songs matches a snapshot 1`] = `
+Array [
+  <h2>
+    Songs
+  </h2>,
+  <div>
+    <h3>
+      songs
+    </h3>
+    <ul />
+  </div>,
+]
+`;
