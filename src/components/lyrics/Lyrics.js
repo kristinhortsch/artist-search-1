@@ -12,7 +12,6 @@ export default class Lyrics extends PureComponent {
   componentDidMount() {
     getSongLyrics(this.props.match.params.artist, this.props.match.params.song)
       .then(response => {
-        console.log(response);
         this.setState({ lyrics: response.results });
       });
   }

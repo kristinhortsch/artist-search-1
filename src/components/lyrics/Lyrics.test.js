@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer';
 import Lyrics  from './Lyrics';
 import { MemoryRouter } from 'react-router-dom';
 
-
 jest.mock('../../services/artistsAndWorks.js');
 
 describe('Lyrics', () => {
