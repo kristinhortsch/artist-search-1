@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { getSongLyrics } from '../../services/artistsAndWorks';
+import styles from '../App.css';
 
 export default class Lyrics extends PureComponent {
   state = {
@@ -19,8 +20,8 @@ export default class Lyrics extends PureComponent {
     const { lyrics } = this.state;
     return (
       <Fragment>
-        <h2>Song Title</h2>
-        <p>{lyrics}</p>
+        <h3 className={styles.title}>Song Lyrics</h3>
+        <p className={styles.lyrics}>{lyrics}</p>
       </Fragment>
     );
   }

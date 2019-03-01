@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import styles from './App.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -13,6 +14,7 @@ import Songs from './songs/Songs';
 export default function App() {
   return (
     <Fragment>
+      <h1 className={styles.header}>ARTIST SEARCH</h1>
       <Router>
         <Switch>
           <Route exact path='/artist/:name/:id' component={Songs}/>

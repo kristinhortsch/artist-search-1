@@ -57,8 +57,7 @@ class Search extends PureComponent {
     
     return (
       <Fragment>
-        <div className={styles.header}>
-          <h1>Search</h1>
+        <div className={styles.search}>
           <form onSubmit={this.handleSubmit}>
             <input type="text" name="artist" value={artist} onChange={this.handleSubmit}></input>
             <button onClick={this.handleClick}>Search</button>
@@ -70,7 +69,7 @@ class Search extends PureComponent {
             {this.state.paging && <p>{this.state.page} / {totalPages}</p>}
             <button onClick={this.increment}>Forward</button>
           </div>
-          <h3>Artists</h3>
+          <h3 className={styles.title}>Artists</h3>
           <ul>
             {listOfArtists}
           </ul>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getArtistWorks } from '../../services/artistsAndWorks';
 import Song from './Song';
+import styles from '../App.css';
 
 export default class Songs extends PureComponent {
   state = {
@@ -25,14 +26,13 @@ export default class Songs extends PureComponent {
     const listOfSongs = songs.map(song => {
       const songTitle = song.title;
       songTitle.replace(/\s+/g, '-').toLowerCase();
-      return <Link to={`/songs/${this.props.match.params.name}/${songTitle}`} key={song.id}><li><Song song={song}/></li></Link>;
+      return <Link className={styles.link} to={`/songs/${this.props.match.params.name}/${songTitle}`} key={song.id}><li><Song song={song}/></li></Link>;
     });
     
     return (
       <Fragment>
-        <h2>Songs</h2>
+        <h3 className={styles.title}>Songs</h3>
         <div>
-          <h3>songs</h3>
           <ul>
             {listOfSongs}
           </ul>
